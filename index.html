@@ -9,82 +9,7 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 		/>
-		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
-			body {
-				font-family: "Poppins", sans-serif;
-				background-color: #0f172a;
-				color: #f8fafc;
-			}
-
-			.gradient-bg {
-				background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-			}
-
-			.server-card {
-				background: rgba(15, 23, 42, 0.8);
-				backdrop-filter: blur(10px);
-				border: 1px solid rgba(255, 255, 255, 0.1);
-				transition: all 0.3s ease;
-			}
-
-			.server-card:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-			}
-
-			.online-status {
-				animation: pulse 2s infinite;
-			}
-
-			.online-status-red {
-				animation: pulse-red 2s infinite;
-			}
-
-			@keyframes pulse {
-				0% {
-					box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
-				}
-				70% {
-					box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
-				}
-				100% {
-					box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
-				}
-			}
-
-			@keyframes pulse-red {
-				0% {
-					box-shadow: 0 0 0 0 rgba(222, 74, 74, 0.7);
-				}
-				70% {
-					box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
-				}
-				100% {
-					box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
-				}
-			}
-
-			.nav-link {
-				position: relative;
-			}
-
-			.nav-link::after {
-				content: "";
-				position: absolute;
-				width: 0;
-				height: 2px;
-				bottom: 0;
-				left: 0;
-				background-color: #3b82f6;
-				transition: width 0.3s ease;
-			}
-
-			.nav-link:hover::after {
-				width: 100%;
-			}
-		</style>
+		<link rel="stylesheet" href="style.css" type="text/css" media="all" />
 	</head>
 	<body class="min-h-screen">
 		<!-- Navigation -->
@@ -99,6 +24,7 @@
 									alt="ElFx Logo"
 									class="h-12 w-12 rounded-full"
 								/>
+								
 							</a>
 						</div>
 					</div>
@@ -167,31 +93,52 @@
 		</nav>
 
 		<!-- Hero Section -->
-		<section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+		<section
+			id="home"
+			class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/70 to-transparent"
+		>
 			<div class="max-w-7xl mx-auto">
 				<div class="text-center">
-					<h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-						Welcome to <span class="text-blue-400">ElFx</span>
-					</h1>
-					<p
-						class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto"
-					>
-						Join our vibrant Minecraft community and experience the
-						best gameplay with friends
-					</p>
+					<div class="animate-fade-in">
+						<h1
+							class="text-4xl md:text-6xl font-bold text-white mb-6 font-[Press+Start+2P] tracking-wide"
+						>
+							<span class="text-[#55FF55]">ElFx</span> Minecraft
+							Community
+						</h1>
+						<p
+							class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
+						>
+							Experience the ultimate Minecraft adventure with our
+							friendly community and premium servers
+						</p>
 
-					<div class="mt-10 flex justify-center space-x-4">
+						<div
+							class="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+						>
+							<a
+								href="#minecraftserver"
+								class="px-8 py-4 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white font-bold border-4 border-[#d4af37] transition-all duration-300 flex items-center justify-center pixel-button hover:scale-105"
+							>
+								<i class="fas fa-server mr-3 text-lg"></i> Join
+								Server
+							</a>
+							<a
+								href="#discord"
+								class="px-8 py-4 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white font-bold border-4 border-[#d4af37] transition-all duration-300 flex items-center justify-center pixel-button hover:scale-105"
+							>
+								<i class="fab fa-discord mr-3 text-lg"></i> Join
+								Discord
+							</a>
+						</div>
+					</div>
+
+					<div class="mt-16 animate-bounce">
 						<a
 							href="#minecraftserver"
-							class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300 flex items-center"
+							class="text-slate-400 hover:text-white"
 						>
-							<i class="fas fa-server mr-2"></i> Join Server
-						</a>
-						<a
-							href="#discord"
-							class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition duration-300 flex items-center"
-						>
-							<i class="fab fa-discord mr-2"></i> Discord
+							<i class="fas fa-chevron-down text-3xl"></i>
 						</a>
 					</div>
 				</div>
@@ -205,61 +152,99 @@
 					<h2 class="text-3xl md:text-4xl font-bold text-white">
 						Our Minecraft Server
 					</h2>
-					<div class="w-20 h-1 bg-blue-500 mx-auto mt-4"></div>
+					<div
+						class="w-32 h-4 bg-[#d4af37] mx-auto mt-4"
+						style="background-image: repeating-linear-gradient(45deg, #d4af37, #d4af37 2px, #b38f35 2px, #b38f35 4px);"
+					></div>
 				</div>
 
 				<div
-					class="max-w-md mx-auto server-card rounded-xl p-6 shadow-xl"
+					class="max-w-md mx-auto server-card rounded-xl p-8 shadow-xl transform transition-all hover:scale-105 duration-300"
 				>
-					<div class="flex items-center justify-between mb-4">
-						<h3 class="text-xl font-semibold text-white">
+					<div class="flex items-center justify-between mb-6">
+						<h3
+							class="text-2xl font-bold text-white flex items-center"
+						>
+							<i class="fas fa-crown text-yellow-400 mr-3"></i>
 							ElFx Server
 						</h3>
-						<div class="flex items-center">
+						<div
+							class="flex items-center bg-yellow-900/30 px-3 py-1 rounded-full border border-yellow-500"
+							id="server-status"
+						>
 							<span
-								class="online-status h-3 w-3 bg-green-500 rounded-full mr-2"
-								id="status-icon"
+								class="h-3 w-3 rounded-full bg-yellow-500 mr-2"
 							></span>
-							<span
-								class="text-sm text-green-400"
-								id="status-text"
-								>Online</span
+							<span class="text-sm font-medium text-yellow-400"
+								>Loading...</span
 							>
 						</div>
 					</div>
 
-					<div class="space-y-4">
-						<div class="flex justify-between items-center">
-							<span class="text-gray-400"
-								><i class="fas fa-globe mr-2"></i> IP
-								Address</span
+					<div class="space-y-5">
+						<div
+							class="flex justify-between items-center bg-slate-900/50 p-3 rounded-lg"
+						>
+							<span class="text-gray-300 font-medium"
+								><i class="fas fa-globe mr-2 text-blue-400"></i>
+								IP Address</span
 							>
-							<span class="text-white font-mono" id="ip"
-								>Loading</span
-							>
-						</div>
-						<div class="flex justify-between items-center">
-							<span class="text-gray-400"
-								><i class="fas fa-plug mr-2"></i> Port</span
-							>
-							<span class="text-white font-mono" id="port"
-								>Loading</span
+							<span
+								class="text-white font-mono bg-slate-800 px-3 py-1 rounded"
+								>mc.elfx.my.id</span
 							>
 						</div>
-						<div class="flex justify-between items-center">
-							<span class="text-gray-400"
-								><i class="fas fa-users mr-2"></i> Players</span
+						<div
+							class="flex justify-between items-center bg-slate-900/50 p-3 rounded-lg"
+						>
+							<span class="text-gray-300 font-medium"
+								><i
+									class="fas fa-plug mr-2 text-purple-400"
+								></i>
+								Port</span
 							>
-							<span class="text-white" id="players">Loading</span>
+							<span
+								class="text-white font-mono bg-slate-800 px-3 py-1 rounded"
+								>25565</span
+							>
 						</div>
-						<div class="flex justify-between items-center">
-							<span class="text-gray-400"
-								><i class="fas fa-code-branch mr-2"></i>
+						<div
+							class="flex justify-between items-center bg-slate-900/50 p-3 rounded-lg"
+						>
+							<span class="text-gray-300 font-medium"
+								><i
+									class="fas fa-users mr-2 text-green-400"
+								></i>
+								Players</span
+							>
+							<span
+								class="text-white bg-slate-800 px-3 py-1 rounded"
+								id="server-players"
+								>Loading...</span
+							>
+						</div>
+						<div
+							class="flex justify-between items-center bg-slate-900/50 p-3 rounded-lg"
+						>
+							<span class="text-gray-300 font-medium"
+								><i
+									class="fas fa-code-branch mr-2 text-red-400"
+								></i>
 								Version</span
 							>
-							<span class="text-white" id="version">Loading</span>
+							<span
+								class="text-white bg-slate-800 px-3 py-1 rounded"
+								id="server-version"
+								>Loading...</span
+							>
 						</div>
 					</div>
+
+					<button
+						class="mt-8 w-full py-3 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 text-white font-bold rounded-lg transition-all duration-300 flex items-center justify-center transform hover:scale-[1.02] shadow-lg"
+					>
+						<i class="fas fa-play mr-3"></i> Connect Now
+					</button>
 				</div>
 			</div>
 		</section>
@@ -281,50 +266,90 @@
 					class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
 				>
 					<!-- Discord Card -->
-					<div id="discord" class="server-card rounded-xl p-6">
-						<div class="flex items-center mb-4">
-							<div class="p-3 rounded-full bg-indigo-600 mr-4">
+					<div
+						id="discord"
+						class="server-card rounded-xl p-8 transform transition-all hover:scale-[1.02] duration-300"
+					>
+						<div class="flex items-center mb-6">
+							<div
+								class="p-4 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 shadow-lg mr-4"
+							>
 								<i
-									class="fab fa-discord text-white text-xl"
+									class="fab fa-discord text-white text-2xl"
 								></i>
 							</div>
-							<h3 class="text-xl font-semibold text-white">
-								Discord
+							<h3 class="text-2xl font-bold text-white">
+								Discord Community
 							</h3>
 						</div>
-						<p class="text-gray-400 mb-6">
-							Join our Discord server to chat with other players,
-							get support, and stay updated with server news.
+						<p class="text-gray-300 mb-6 leading-relaxed">
+							Join our thriving Discord community with 500+
+							members! Get instant support, participate in events,
+							and be the first to know about server updates.
 						</p>
+
+						<div class="mb-6 overflow-hidden rounded-xl shadow-lg">
+							<iframe
+								src="https://discord.com/widget?id=1385466217682305087&theme=dark"
+								width="100%"
+								height="300"
+								allowtransparency="true"
+								frameborder="0"
+								sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+								class="rounded-xl"
+							></iframe>
+						</div>
+
 						<a
-							href="#"
-							class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition duration-300 inline-flex items-center"
+							href="https://discord.gg/1385466217682305087"
+							target="_blank"
+							class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold rounded-lg transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
 						>
-							<i class="fab fa-discord mr-2"></i> Join Discord
+							<i class="fab fa-discord mr-3 text-xl"></i> Join Our
+							Discord
 						</a>
 					</div>
 
 					<!-- WhatsApp Card -->
-					<div id="whatsapp" class="server-card rounded-xl p-6">
-						<div class="flex items-center mb-4">
-							<div class="p-3 rounded-full bg-green-600 mr-4">
+					<div
+						id="whatsapp"
+						class="server-card rounded-xl p-8 transform transition-all hover:scale-[1.02] duration-300"
+					>
+						<div class="flex items-center mb-6">
+							<div
+								class="p-4 rounded-full bg-gradient-to-br from-green-600 to-teal-500 shadow-lg mr-4"
+							>
 								<i
-									class="fab fa-whatsapp text-white text-xl"
+									class="fab fa-whatsapp text-white text-2xl"
 								></i>
 							</div>
-							<h3 class="text-xl font-semibold text-white">
-								WhatsApp
+							<h3 class="text-2xl font-bold text-white">
+								WhatsApp Group
 							</h3>
 						</div>
-						<p class="text-gray-400 mb-6">
-							Connect with us on WhatsApp for quick communication
-							and group chats with other community members.
+						<p class="text-gray-300 mb-6 leading-relaxed">
+							Join our active WhatsApp group for real-time
+							communication, quick announcements, and direct
+							support from our admin team.
 						</p>
+
+						<div class="mb-6 p-4 bg-slate-900/50 rounded-xl">
+							<div class="flex items-center">
+								<i
+									class="fas fa-users text-yellow-400 text-xl mr-3"
+								></i>
+								<span class="text-white font-medium"
+									>200+ Active Members</span
+								>
+							</div>
+						</div>
+
 						<a
 							href="#"
-							class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition duration-300 inline-flex items-center"
+							class="px-6 py-3 bg-gradient-to-r from-green-600 to-teal-500 hover:from-green-700 hover:to-teal-600 text-white font-bold rounded-lg transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
 						>
-							<i class="fab fa-whatsapp mr-2"></i> WhatsApp Group
+							<i class="fab fa-whatsapp mr-3 text-xl"></i> Join
+							WhatsApp Group
 						</a>
 					</div>
 				</div>
@@ -339,10 +364,13 @@
 				>
 					<div class="flex items-center mb-4 md:mb-0">
 						<img
-							src="./logo.png"
+							src="https://via.placeholder.com/40"
 							alt="ElFx Logo"
-							class="h-11 w-11 rounded-full"
+							class="h-8 w-8 rounded-full"
 						/>
+						<span class="ml-2 text-lg font-bold text-white"
+							>ElFx</span
+						>
 					</div>
 					<div class="flex space-x-6">
 						<a
@@ -377,113 +405,6 @@
 			</div>
 		</footer>
 
-		<script type="text/javascript" charset="utf-8">
-			// Mobile menu toggle
-			document
-				.getElementById("mobile-menu-button")
-				.addEventListener("click", function () {
-					const menu = document.getElementById("mobile-menu");
-					menu.classList.toggle("hidden");
-
-					// Change icon based on menu state
-					const icon = this.querySelector("i");
-					if (menu.classList.contains("hidden")) {
-						icon.classList.remove("fa-times");
-						icon.classList.add("fa-bars");
-					} else {
-						icon.classList.remove("fa-bars");
-						icon.classList.add("fa-times");
-					}
-				});
-
-			// Smooth scrolling for anchor links
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener("click", function (e) {
-					e.preventDefault();
-
-					const targetId = this.getAttribute("href");
-					if (targetId === "#") return;
-
-					const targetElement = document.querySelector(targetId);
-					if (targetElement) {
-						// Close mobile menu if open
-						const mobileMenu =
-							document.getElementById("mobile-menu");
-						if (!mobileMenu.classList.contains("hidden")) {
-							mobileMenu.classList.add("hidden");
-							const menuButton =
-								document.getElementById("mobile-menu-button");
-							const icon = menuButton.querySelector("i");
-							icon.classList.remove("fa-times");
-							icon.classList.add("fa-bars");
-						}
-
-						// Scroll to target
-						window.scrollTo({
-							top: targetElement.offsetTop - 80,
-							behavior: "smooth"
-						});
-					}
-				});
-			});
-
-			// Add shadow to navbar on scroll
-			window.addEventListener("scroll", function () {
-				const nav = document.querySelector("nav");
-				if (window.scrollY > 10) {
-					nav.classList.add("shadow-xl");
-				} else {
-					nav.classList.remove("shadow-xl");
-				}
-			});
-
-			const ip = "mc.hypixel.net";
-			const ip2 = null;
-			fetch("https://api.mcstatus.io/v2/status/java/" + ip)
-				.then(res => res.json())
-				.then(data => {
-					const statusIcon = document.getElementById("status-icon");
-					const statusText = document.getElementById("status-text");
-					const ipAddress = data.host;
-					const port = data.port;
-					const players = `${data.players.online} / ${data.players.max}`;
-					const version = data.version.name_clean;
-					const ipStats = document.getElementById("ip");
-					const portStats = document.getElementById("port");
-					const playerStats = document.getElementById("players");
-					const versionStats = document.getElementById("version");
-
-					if (data.online === true) {
-						statusIcon.classList.add("bg-green-500");
-						statusIcon.classList.remove("bg-red-500");
-						statusIcon.classList.add("online-status");
-						statusIcon.classList.remove("online-status-red");
-						statusText.textContent = "Online";
-						statusText.classList.add("text-green-400");
-						statusText.classList.remove("text-red-400");
-						ipStats.textContent = ipAddress;
-						playerStats.textContent = players;
-						portStats.textContent = port;
-						versionStats.textContent = version;
-					}
-
-					if (data.online === false) {
-						statusIcon.classList.add("bg-red-500");
-						statusIcon.classList.remove("bg-green-500");
-						statusIcon.classList.add("online-status-red");
-						statusIcon.classList.remove("online-status");
-						statusText.textContent = "Offline";
-						statusText.classList.add("text-red-400");
-						statusText.classList.remove("text-green-400");
-						ipStats.textContent = "-";
-						playerStats.textContent = "-";
-						portStats.textContent = "-";
-						versionStats.textContent = "-";
-					}
-				})
-				.catch(err => {
-					console.log(err);
-				});
-		</script>
+		<script src="script.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
