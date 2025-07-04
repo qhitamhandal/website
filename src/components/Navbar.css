@@ -1,0 +1,73 @@
+.logo {
+    z-index: 11;
+}
+
+.logo img {
+    width: 20%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0, 0%, 10%);
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: gold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: white;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        position: fixed;
+        background-color: hsl(0, 0%, 10%);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 10;
+    }
+
+    .navbar ul.active {
+        transform: translateX(0);
+    }
+
+    .navbar ul li a {
+        font-size: 1.5rem;
+    }
+
+    .menu-icon {
+        display: flex;
+        font-size: 1.5rem;
+        z-index: 20;
+    }
+}
