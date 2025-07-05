@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/New Project 1 [2202599].png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,21 +12,22 @@ function Navbar() {
         setOpen(!open);
     };
 
+    const handleLinkClick = () => {
+        setOpen(false);
+    };
+
     return (
         <nav className="navbar">
-            <a href="#" className="logo">
+            <Link to="/" className="logo" onClick={handleLinkClick}>
                 <img src={logo} alt="Logo" />
-            </a>
+            </Link>
 
             <ul className={open ? "active" : ""}>
                 <li>
-                    <a href="#">Home</a>
+                    <Link to="/" onClick={handleLinkClick}>Home</Link>
                 </li>
                 <li>
-                    <a href="#">Server</a>
-                </li>
-                <li>
-                    <a href="#">Project</a>
+                    <Link to="/downloads" onClick={handleLinkClick}>Downloads</Link>
                 </li>
             </ul>
 
