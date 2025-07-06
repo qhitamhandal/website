@@ -5,7 +5,7 @@ function Downloads() {
   const [files, setFiles] = useState([]);
 
   useEffect(() => {
-    fetch("http://139.59.109.44:3001/files")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/files`)
       .then((response) => response.json())
       .then((data) => setFiles(data))
       .catch((error) => console.error("Error fetching files:", error));
