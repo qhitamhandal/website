@@ -5,7 +5,7 @@ function Downloads() {
   const [files, setFiles] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/files")
+    fetch("http://139.59.109.44:3001/files")
       .then((response) => response.json())
       .then((data) => setFiles(data))
       .catch((error) => console.error("Error fetching files:", error));
