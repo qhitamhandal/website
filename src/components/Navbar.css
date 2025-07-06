@@ -1,73 +1,75 @@
 .logo {
-    z-index: 11;
+  z-index: 11;
 }
 
 .logo img {
-    width: 20%;
+  max-width: 150px;
+  width: 100%;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: hsl(0, 0%, 10%);
-    padding: 0.5rem 1rem;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(0, 0%, 10%);
+  padding: 0.3rem 1rem;
+  position: relative;
 }
 
 .navbar ul {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
 }
 
 .navbar ul li {
-    list-style: none;
+  list-style: none;
 }
 
 .navbar ul li a {
-    color: gold;
-    text-decoration: none;
-    transition: color 0.3s;
+  color: gold;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-    color: white;
+  color: white;
 }
 
 .menu-icon {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {
-    .navbar ul {
-        flex-direction: column;
-        position: fixed;
-        background-color: hsl(0, 0%, 10%);
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        z-index: 10;
-    }
+  .navbar ul {
+    flex-direction: column;
+    position: fixed;
+    background-color: hsl(0, 0%, 10%);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+  }
 
-    .navbar ul.active {
-        transform: translateX(0);
-    }
+  .navbar ul.active {
+    transform: translateX(0);
+  }
 
-    .navbar ul li a {
-        font-size: 1.5rem;
-    }
+  .navbar ul li a {
+    font-size: 1.5rem;
+  }
 
-    .menu-icon {
-        display: flex;
-        font-size: 1.5rem;
-        z-index: 20;
-    }
+  .menu-icon {
+    display: flex;
+    font-size: 1.5rem;
+    z-index: 20;
+  }
 }

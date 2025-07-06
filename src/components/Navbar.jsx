@@ -6,36 +6,40 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function Navbar() {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setOpen(!open);
-    };
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
 
-    const handleLinkClick = () => {
-        setOpen(false);
-    };
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
 
-    return (
-        <nav className="navbar">
-            <Link to="/" className="logo" onClick={handleLinkClick}>
-                <img src={logo} alt="Logo" />
-            </Link>
+  return (
+    <nav className="navbar">
+      <div className="logo">
+        <img src={logo} alt="Logo" />
+      </div>
 
-            <ul className={open ? "active" : ""}>
-                <li>
-                    <Link to="/" onClick={handleLinkClick}>Home</Link>
-                </li>
-                <li>
-                    <Link to="/downloads" onClick={handleLinkClick}>Downloads</Link>
-                </li>
-            </ul>
+      <ul className={open ? "active" : ""}>
+        <li>
+          <Link to="/" onClick={handleLinkClick}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/downloads" onClick={handleLinkClick}>
+            Downloads
+          </Link>
+        </li>
+      </ul>
 
-            <div className="menu-icon" onClick={toggleMenu}>
-                <FontAwesomeIcon icon={open ? faTimes : faBars} color="gold" />
-            </div>
-        </nav>
-    );
+      <div className="menu-icon" onClick={toggleMenu}>
+        <FontAwesomeIcon icon={open ? faTimes : faBars} color="gold" />
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

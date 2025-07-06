@@ -1,0 +1,29 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px; /* Added max-width for larger screens */
+  margin-top: 3rem;
+}
+
+.button-group a {
+  text-decoration: none;
+  color: gold;
+  background-color: hsl(0, 0%, 10%);
+  padding: 0.5rem;
+  font-size: 1.5rem; /* Changed to rem for responsiveness */
+  border: 1.4px solid gold;
+  text-align: center;
+}

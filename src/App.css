@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: hsl(0, 0%, 20%);
-    font-family: "Figtree", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 30px;
-    font-style: italic;
+  background-color: hsl(0, 0%, 20%);
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  max-width: 1200px;
+  margin: 0 auto;
 }
