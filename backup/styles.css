@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+header h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+section:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+#social-links {
+  list-style: none;
+  padding: 0;
+}
+
+#social-links li {
+  margin-bottom: 10px;
+}
+
+#social-links a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 5px;
+}
+
+#social-links a:hover {
+  color: #1e90ff;
+}
+
+#discord-widget,
+#minecraft-widget {
+  padding-top: 10px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+strong {
+  font-weight: 500;
+  color: #ddd;
+}

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/config.json")
+  fetch("config.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then((config) => {
-      // Social Media (only on index.html)
+      // Social Media
       const socialLinks = document.getElementById("social-links");
       if (socialLinks) {
         socialLinks.innerHTML = ""; // Clear any existing links
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Discord (only on index.html)
+      // Discord
       const discordWidget = document.getElementById("discord-widget");
       if (discordWidget) {
         fetch(`https://api.lanyard.rest/v1/users/${config.discordUserId}`)
@@ -56,50 +56,22 @@ document.addEventListener("DOMContentLoaded", () => {
           );
       }
 
-      // Minecraft Server (only on index.html)
+      // Minecraft Server
       const minecraftWidget = document.getElementById("minecraft-widget");
       if (minecraftWidget) {
         fetch(`https://api.mcsrvstat.us/2/${config.minecraftServerIp}`)
           .then((response) => response.json())
           .then((data) => {
             if (data.online) {
-              minecraftWidget.innerHTML = `<strong>Status:</strong> <span class="status-online">Online</span><br><strong>Players:</strong> ${data.players.online}/${data.players.max}`;
+              minecraftWidget.innerHTML = `<strong>Status:</strong> <span style="color: #28a745;">Online</span><br><strong>Players:</strong> ${data.players.online}/${data.players.max}`;
             } else {
               minecraftWidget.innerHTML =
-                '<strong>Status:</strong> <span class="status-offline">Offline</span>';
+                '<strong>Status:</strong> <span style="color: #dc3545;">Offline</span>';
             }
           })
           .catch(
             () =>
               (minecraftWidget.innerHTML = "Error fetching Minecraft status."),
-          );
-      }
-
-      // Cila SMP Server (only on cila-smp.html)
-      const cilaSmpWidget = document.getElementById("cila-smp-widget");
-      if (cilaSmpWidget) {
-        fetch(`https://api.mcsrvstat.us/2/${config.minecraftServerIp}`)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.online) {
-              let serverHtml = "";
-              if (data.icon) {
-                serverHtml += `<img src="${data.icon}" alt="Server Icon" class="server-icon">`;
-              }
-              serverHtml += `<strong>Status:</strong> <span class="status-online">Online</span><br>`;
-              serverHtml += `<strong>Players:</strong> ${data.players.online}/${data.players.max}<br>`;
-              if (data.motd && data.motd.html) {
-                serverHtml += `<strong>MOTD:</strong><div class="motd">${data.motd.html.join("<br>")}</div>`;
-              }
-              serverHtml += `<a href="https://chat.whatsapp.com/GmtRDT4w0TH3DbnaBItxzX" target="_blank" rel="noopener noreferrer" class="community-link">Join Community</a>`;
-              cilaSmpWidget.innerHTML = serverHtml;
-            } else {
-              cilaSmpWidget.innerHTML =
-                '<strong>Status:</strong> <span class="status-offline">Offline</span>';
-            }
-          })
-          .catch(
-            () => (cilaSmpWidget.innerHTML = "Error fetching server status."),
           );
       }
     })
