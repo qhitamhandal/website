@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Server Ranks - Benefits List</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: #f5f5f5;
+                color: #333;
+                line-height: 1.6;
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+
+            header {
+                background: linear-gradient(135deg, #6e48aa, #9d50bb);
+                color: white;
+                padding: 25px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+                opacity: 0.9;
+            }
+
+            .rank-container {
+                padding: 20px;
+            }
+
+            .rank {
+                border-left: 5px solid;
+                margin-bottom: 25px;
+                padding: 15px;
+                background: #fff;
+                border-radius: 0 8px 8px 0;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.3s;
+            }
+
+            .rank:hover {
+                transform: translateX(5px);
+            }
+
+            .rank-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
+            .rank-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-right: 10px;
+            }
+
+            .rank-badge {
+                background: #333;
+                color: white;
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+
+            .rank-features {
+                margin-left: 20px;
+            }
+
+            .feature {
+                margin-bottom: 8px;
+                position: relative;
+                padding-left: 20px;
+            }
+
+            .feature:before {
+                content: "✓";
+                color: #4caf50;
+                position: absolute;
+                left: 0;
+                font-weight: bold;
+            }
+
+            .feature-category {
+                font-weight: bold;
+                color: #666;
+                margin: 10px 0 5px;
+                border-bottom: 1px dashed #eee;
+                padding-bottom: 5px;
+            }
+
+            /* Rank-specific colors */
+            .member {
+                border-color: #4caf50;
+            }
+
+            .elite {
+                border-color: #2196f3;
+            }
+
+            .mvp {
+                border-color: #9c27b0;
+            }
+
+            .premium {
+                border-color: #ff9800;
+            }
+
+            .legend {
+                border-color: #f44336;
+            }
+
+            .glorious {
+                border-color: #ffd700;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px;
+                background: #f9f9f9;
+                color: #666;
+                font-size: 0.9rem;
+            }
+
+            .note {
+                background: #fff9c4;
+                padding: 15px;
+                border-radius: 5px;
+                margin: 20px 0;
+                border-left: 4px solid #ffd600;
+            }
+
+            @media (max-width: 600px) {
+                .rank-title {
+                    font-size: 1.3rem;
+                }
+
+                header {
+                    padding: 20px 15px;
+                }
+
+                h1 {
+                    font-size: 1.8rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>SERVER RANK BENEFITS</h1>
+                <div class="subtitle">Upgrade for exclusive features!</div>
+            </header>
+
+            <div class="rank-container">
+                <!-- Member Rank -->
+                <div class="rank member">
+                    <div class="rank-header">
+                        <div class="rank-title">Member</div>
+                        <div class="rank-badge">BASIC</div>
+                    </div>
+                    <div class="rank-features">
+                        <div class="feature-category">Basic Features:</div>
+                        <div class="feature">3 Homes (/home, /sethome)</div>
+                        <div class="feature">
+                            Player teleport (/tpa, /tpaccept)
+                        </div>
+                        <div class="feature">Colored chat</div>
+                        <div class="feature">See online players (/list)</div>
+
+                        <div class="feature-category">Economy:</div>
+                        <div class="feature">Money transfer (/pay)</div>
+                    </div>
+                </div>
+
+                <!-- Elite Rank -->
+                <div class="rank elite">
+                    <div class="rank-header">
+                        <div class="rank-title">Elite</div>
+                        <div class="rank-badge">UPGRADE</div>
+                    </div>
+                    <div class="rank-features">
+                        <div class="feature-category">New Features:</div>
+                        <div class="feature">Fly mode (/fly)</div>
+                        <div class="feature">Nickname change (/nick)</div>
+                        <div class="feature">
+                            Portable workbench (/workbench)
+                        </div>
+                        <div class="feature">5 Homes</div>
+
+                        <div class="feature-category">Chat:</div>
+                        <div class="feature">Exclusive chat format</div>
+                    </div>
+                </div>
+
+                <!-- MVP Rank -->
+                <div class="rank mvp">
+                    <div class="rank-header">
+                        <div class="rank-title">MVP</div>
+                        <div class="rank-badge">PREMIUM</div>
+                    </div>
+                    <div class="rank-features">
+                        <div class="feature-category">Premium Features:</div>
+                        <div class="feature">Heal and feed (/heal, /feed)</div>
+                        <div class="feature">Adjust speed (/speed)</div>
+                        <div class="feature">7 Homes</div>
+                        <div class="feature">Nearby player check (/near)</div>
+
+                        <div class="feature-category">
+                            Personal Environment:
+                        </div>
+                        <div class="feature">Change time (/ptime)</div>
+                        <div class="feature">Change weather (/pweather)</div>
+                    </div>
+                </div>
+
+                <!-- Premium Rank -->
+                <div class="rank premium">
+                    <div class="rank-header">
+                        <div class="rank-title">Premium</div>
+                        <div class="rank-badge">EXCLUSIVE</div>
+                    </div>
+                    <div class="rank-features">
+                        <div class="feature-category">Creative Access:</div>
+                        <div class="feature">Gamemode change (/gmc, /gms)</div>
+                        <div class="feature">10 Homes</div>
+
+                        <div class="feature-category">Protection:</div>
+                        <div class="feature">
+                            Bypass some region protections
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legend Rank -->
+                <div class="rank legend">
+                    <div class="rank-header">
+                        <div class="rank-title">Legend</div>
+                        <div class="rank-badge">VIP</div>
+                    </div>
+                    <div class="rank-features">
+                        <div class="feature-category">Builder Tools:</div>
+                        <div class="feature">WorldEdit basics (//wand)</div>
+                        <div class="feature">15 Homes</div>
+
+                        <div class="feature-category">Anti-Annoyance:</div>
+                        <div class="feature">Ignore players (/ignore)</div>
+                    </div>
+                </div>
+
+                <!-- Glorious Rank -->
+                <div class="rank glorious">
+                    <div class="rank-header">
+                        <div class="rank-title">Glorious</div>
+                        <div class="rank-badge">ULTIMATE</div>
+                    </div>
+                    <div class="rank-features">
+                        <div class="feature-category">Admin-Lite Features:</div>
+                        <div class="feature">Full WorldEdit access</div>
+                        <div class="feature">20 Homes</div>
+                        <div class="feature">Keep inventory/XP on death</div>
+
+                        <div class="feature-category">Priority:</div>
+                        <div class="feature">Highlighted name and chat</div>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Note:</strong> All higher ranks include benefits
+                    from previous ranks. Upgrade via /store or contact staff!
+                </div>
+            </div>
+
+            <footer>
+                &copy; 2023 Your Server Name | Benefits subject to change
+            </footer>
+        </div>
+    </body>
+</html>
